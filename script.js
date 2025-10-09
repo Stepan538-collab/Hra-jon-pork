@@ -6,21 +6,22 @@ const cols = 10;
 const circle = document.createElement("div");
 circle.classList.add("circle");
 
+var jako = 0;
+
 // Initialize a 10x10 array with consecutive numbers
 const numRows = 10;
 const numCols = 10;
 
 game_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 1, 1, 0, 1, 1, 1, 1],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 1, 1, 0, 1, 1, 1, 0],
+[0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
 [0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 1, 0, 2, 0],
 [0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 1, 1, 0, 1, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],]
+[0, 2, 0, 1, 1, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],]
 
 // Initialize the circle's position
 let x = 0;
@@ -45,6 +46,15 @@ function createBoard() {
       square.classList.add("square"); // Přidáme divu třídu pro pozdější nastavení jeho vlastností
 
       bunka_tabulky.appendChild(square); // Přidáme div do buňky tabulky
+    }
+     if (game_board[radek][sloupec] == 2) {
+      // Pokud se na této pozici nachází překážka
+
+      const coin = document.createElement("div"); // Vytvoříme element div, který slouží jako zábrana
+
+      coin.classList.add("coin"); // Přidáme divu třídu pro pozdější nastavení jeho vlastností
+
+      bunka_tabulky.appendChild(coin); // Přidáme div do buňky tabulky
     }
   }
   board.appendChild(radek_tabulky); // přidáme celý řádek do tabulky
@@ -92,6 +102,7 @@ function moveCircle(event) {
         y = newY;
     }
 
+    if (game_board[newY][newX] == 2){}
     // Add the circle to the new position
     board.rows[y].cells[x].appendChild(circle);
 }
