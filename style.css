@@ -27,7 +27,7 @@ td {
   /* You can customize the square color */
 }
 
-.enemy {
+.npc {
   width: 100%;
   height: 100%;
   background-image: url(reznik.jpg);
