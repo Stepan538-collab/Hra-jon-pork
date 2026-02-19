@@ -105,7 +105,7 @@ game_board8 = [[0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
 [0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
 [0, 0, 1, 0, 0, 0, 0, 0, 1, 0]]
 
-game_board9 = [[1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+game_board9 = [[0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
 [0, 0, 2, 0, 0, 1, 0, 0, 0, 0],
 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
@@ -117,7 +117,19 @@ game_board9 = [[1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
 [1, 0, 0, 0, 0, 1, 0, 0, 0, 0]
 ]
 
-var gbpole=[game_board1,game_board2,game_board3,game_board4,game_board5,game_board6,game_board7,game_board8,game_board8,game_board9];
+game_board10 = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0],
+[0, 0, 0, 0, 0, 0, 2, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0]
+]
+
+var gbpole=[game_board1,game_board2,game_board3,game_board4,game_board5,game_board6,game_board7,game_board8,game_board8,game_board9,game_board10];
 var indexgbp=0;
 game_board=gbpole[indexgbp];
 // Initialize the circle's position
@@ -216,6 +228,7 @@ function moveCircle(event) {
     if (jabko %3 == 0){
       //window.location.replace("./indexwin.html");
       indexgbp+=1;
+      console.log("Indexbp = "+indexgbp);
       game_board=gbpole[indexgbp];
       while(board.lastElementChild)
       {
